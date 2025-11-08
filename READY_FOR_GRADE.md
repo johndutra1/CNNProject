@@ -44,6 +44,28 @@ python -m src.make_splits --data-dir data --train-ratio 0.7 --val-ratio 0.15 --t
 python -m src.keras_evaluate --data-dir data --splits-path data/splits --split test --checkpoint runs/keras_tuneB --img-size 299 --batch-size 32 --output runs/keras_tuneB/eval_test --export-samples 25
 ```
 
+### Submission checklist (what I included)
+
+- src/ directory (all training/eval code)
+- README.md (how to install / download / run)
+- READY_FOR_GRADE.md (this file)
+- COMPLIANCE_CHECKLIST.md (mapping to requirements)
+- experiments.csv (parameter log)
+- runs/keras_tuneB/ (selected best run artifacts):
+	- best.keras (canonical model)
+	- history.png
+	- confusion_matrix.png
+	- metrics.json
+	- val_predictions.csv
+	- sample_grid.png
+	- eval_test/test_predictions.csv
+	- eval_test/sample_preds_test.png
+
+### Notes for the grader
+
+- I removed runtime-only artifacts (tensorboard event files and compiled python bytecode) from the submission to keep the repo small and focused. The repository still contains the small set of artifacts requested by the assignment.
+- If you need the full training logs or extra checkpoints I produced during tuning, they exist locally in the original workspace and I can provide them on request.
+
 ## Files to submit
 - `runs/keras_tuneB/best.keras` (best model)
 - `runs/keras_tuneB/history.png`
